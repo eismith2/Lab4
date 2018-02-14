@@ -87,7 +87,6 @@ public class Colosseum {
             System.out.println("Input Hit Points");
             tempPokemon.hitPoints = myScan.nextInt();
         }
-        tempPokemon.hitPoints = myScan.nextInt();
         System.out.println("input attack level");
         tempPokemon.attackLevel = myScan.nextInt();
         if (tempPokemon.attackLevel < 1) {
@@ -104,6 +103,10 @@ public class Colosseum {
             if ((tempPokemon.defenseLevel + tempPokemon.attackLevel) > MAX_SUM_LEVELS) {
                 System.out.println("sum of attackLevel and defenseLevel cannot exceed 50");
             }
+            System.out.println("input attack level");
+            tempPokemon.attackLevel = myScan.nextInt();
+            System.out.println("input defense level");
+            tempPokemon.defenseLevel = myScan.nextInt();
         }
         return tempPokemon;
     }
