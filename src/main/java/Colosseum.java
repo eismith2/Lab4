@@ -83,7 +83,7 @@ public class Colosseum {
         System.out.println("Input Hit Points");
         tempPokemon.hitPoints = myScan.nextInt();
         while (tempPokemon.hitPoints > MAX_HIT_POINTS || tempPokemon.hitPoints < 1) {
-            System.out.println("hit points cannot exceed 50");
+            System.out.println("hit points cannot exceed 50 or fall below 1");
             System.out.println("Input Hit Points");
             tempPokemon.hitPoints = myScan.nextInt();
         }
