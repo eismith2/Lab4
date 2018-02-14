@@ -21,6 +21,11 @@ public class Colosseum {
     static final int MAX_NUM_ROUNDS = 10;
 
     /**
+     * attackLevel and defenseLevel cannot exceed 50.
+     */
+    static final int MAX_SUM_LEVELS = 50;
+
+    /**
      * The first Pokemon we will be fighting.
      */
     static Pokemon firstPokemon;
@@ -73,6 +78,33 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        System.out.println("Name it");
+        tempPokemon.name = myScan.next();
+        System.out.println("Input Hit Points");
+        tempPokemon.hitPoints = myScan.nextInt();
+        while (tempPokemon.hitPoints > MAX_HIT_POINTS || tempPokemon.hitPoints < 1) {
+            System.out.println("hit points cannot exceed 50");
+            System.out.println("Input Hit Points");
+            tempPokemon.hitPoints = myScan.nextInt();
+        }
+        tempPokemon.hitPoints = myScan.nextInt();
+        System.out.println("input attack level");
+        tempPokemon.attackLevel = myScan.nextInt();
+        if (tempPokemon.attackLevel < 1) {
+            System.out.println("attack level cannot fall below 1");
+            tempPokemon.attackLevel = myScan.nextInt();
+        }
+        System.out.println("input defense level");
+        tempPokemon.defenseLevel = myScan.nextInt();
+        if (tempPokemon.attackLevel < 1) {
+            System.out.println("defense level cannot fall below 1");
+            tempPokemon.defenseLevel = myScan.nextInt();
+        }
+        while ((tempPokemon.defenseLevel + tempPokemon.attackLevel) > MAX_SUM_LEVELS) {
+            if ((tempPokemon.defenseLevel + tempPokemon.attackLevel) > MAX_SUM_LEVELS) {
+                System.out.println("sum of attackLevel and defenseLevel cannot exceed 50");
+            }
+        }
         return tempPokemon;
     }
 
