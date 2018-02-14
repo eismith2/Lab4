@@ -103,10 +103,16 @@ public class Colosseum {
             if ((tempPokemon.defenseLevel + tempPokemon.attackLevel) > MAX_SUM_LEVELS) {
                 System.out.println("sum of attackLevel and defenseLevel cannot exceed 50");
             }
-            System.out.println("input attack level");
-            tempPokemon.attackLevel = myScan.nextInt();
+            if (tempPokemon.attackLevel < 1) {
+                System.out.println("attack level cannot fall below 1");
+                tempPokemon.attackLevel = myScan.nextInt();
+            }
             System.out.println("input defense level");
             tempPokemon.defenseLevel = myScan.nextInt();
+            if (tempPokemon.attackLevel < 1) {
+                System.out.println("defense level cannot fall below 1");
+                tempPokemon.defenseLevel = myScan.nextInt();
+            }
         }
         return tempPokemon;
     }
